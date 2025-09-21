@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harley's Pet Salon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <p class="top">Open 8:30am-5:30pm | Monday-Sunday</p>
+    </div>
+  <nav class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Harley's Pet Salon Logo" /></a>
+        <span>Harley's Pet Salon</span>
+    </div>
+    <div class="nav-icons">
+      <a href="create.html"><i class="fas fa-user"></i></a>
+      <div class="burger" id="burger" onclick="toggleMenu()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="feature.html">Feature</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contacts.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="slider">
+  <div class="slide active" style="background-image: url('images/slide1.png');">
+    <div class="overlay">
+      <h1>Pamper Your Pet.</h1>
+      <p>Expert grooming services for a happy, healthy pet.</p>
+      <a href="services.html" class="button">Our Services</a>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide2.png');">
+    <div class="overlay">
+      <h1>Have Questions? We’d Love to Hear From You!</h1>
+      <a href="contacts.html" class="button">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+  <div class="slider-nav">
+    <span class="dot active" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+  </div>
+    </div>
+
+    <section class="about-section" id="about">
+  <div class="about-image">
+    <img src="images/about.png" alt="Harley's Pet Salon" />
+  </div>
+  <div class="about-text">
+    <h2>Your Pet's Home, <br> Away from Home</h2>
+    <p>
+      Welcome to Harley's Pet Salon, where we turn everyday moments into unforgettable memories! Every wag, purr, and happy bark fuels our passion. Our promise is simple: to provide a place where your pet feels not just cared for, but truly loved, because we know they're not just pets—they're family. We strive to create a stress-free haven where every pampering session is an adventure in comfort, confidence, and pure joy.
+    </p>
+    <p>
+      Whether your furry friend is with us for a day, a week, or a grooming session, we aim to provide the best care tailored to their unique physical, mental, and emotional needs. Most importantly, we want them to have fun!
+    </p>
+    <a href="about.html" class="button">About Us</a>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>📍 Lazatin Blvd, San Fernando, Philippines, 2001</p>
+    <p>📞 0995 456 3933 | 📧 harleyspetsalon@gmail.com</p>
+    <p>Follow us: @harleys_pet_salon (Facebook & Instagram)</p>
+    <p>&copy; 2025 Harley's Pet Salon. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="scrollToTopBtn" title="Go to top">&#x2191;</button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

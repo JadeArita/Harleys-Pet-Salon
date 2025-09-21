@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harley's Pet Salon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <p class="top">Open 8:30am-5:30pm | Monday-Sunday</p>
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Harley's Pet Salon Logo" /></a>
+      <span>Harley's Pet Salon</span>
+    </div>
+    <div class="nav-icons">
+      <a href="create.html"><i class="fas fa-user"></i></a>
+      <div class="burger" id="burger" onclick="toggleMenu()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="feature.html">Feature</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contacts.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <section id="menu" class="menu-section">
+    <h2>Our Services & Products</h2>
+
+    <div class="services-search">
+      <input type="text" id="searchInput" placeholder="Search products or services...">
+      <select id="filterCategory">
+        <option value="all">All</option>
+        <option value="grooming">Grooming</option>
+        <option value="haircut">Haircut</option>
+        <option value="shop">Shop</option>
+      </select>
+      <button id="searchBtn">Search</button>
+      <a href="cart.html" class="cart-link">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount">0</span>
+      </a>
+    </div>
+
+    <section class="service-category" data-category="grooming">
+      <h2>Grooming Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <img src="images/groom1.jpg" alt="Basic Grooming">
+          <h3>Basic Grooming</h3><p class="price">₱300</p>
+          <p>Bath & Blow Dry</p>
+          <button class="action-btn">Avail Service</button>
+        </div>
+        <div class="service-card">
+          <img src="images/groom2.jpg" alt="Full Grooming">
+          <h3>Full Grooming</h3><p class="price">₱600</p>
+          <p>Bath, Haircut, Nail Trim, Ear Clean</p>
+          <button class="action-btn">Avail Service</button>
+        </div>
+        <div class="service-card"><img src="images/groom3.jpg"><h3>Nail Trim</h3><p class="price">₱150</p><p>Quick trim</p><button class="action-btn">Avail Service</button></div>
+        <div class="service-card"><img src="images/groom4.jpg"><h3>Ear Cleaning</h3><p class="price">₱120</p><p>Gentle cleaning</p><button class="action-btn">Avail Service</button></div>
+        <div class="service-card"><img src="images/groom5.webp"><h3>De-shedding</h3><p class="price">₱500</p><p>Remove excess fur</p><button class="action-btn">Avail Service</button></div>
+        <div class="service-card"><img src="images/groom6.jpg"><h3>Spa Treatment</h3><p class="price">₱700</p><p>Premium bath</p><button class="action-btn">Avail Service</button></div>
+      </div>
+    </section>
+
+    <section class="service-category" data-category="haircut">
+      <h2>Haircut Styles</h2>
+      <div class="service-grid">
+        <div class="service-card"><img src="images/style1.jpg"><h3>Puppy Cut</h3><p class="price">₱400</p><p>Cute trim</p><button class="action-btn">Avail Service</button></div>
+        <div class="service-card"><img src="images/style2.jpg"><h3>Teddy Bear Cut</h3><p class="price">₱450</p><p>Fluffy look</p><button class="action-btn">Avail Service</button></div>
+        <div class="service-card"><img src="images/style3.jpg"><h3>Lion Cut</h3><p class="price">₱450</p><p>Bold style</p><button class="action-btn">Avail Service</button></div>
+        <div class="service-card"><img src="images/style4.jpg"><h3>Breed Standard</h3><p class="price">₱500</p><p>Classic trim</p><button class="action-btn">Avail Service</button></div>
+      </div>
+    </section>
+
+    <section class="service-category" data-category="shop">
+      <h2>Pet Shop</h2>
+      <div class="service-grid">
+        <div class="service-card"><img src="images/Organic Dog Shampoo.png"><h3>Organic Shampoo</h3><p class="price">₱250</p><p>500ml</p><button class="action-btn">Add to Cart</button></div>
+        <div class="service-card"><img src="images/Pet colonge.png"><h3>Pet Cologne</h3><p class="price">₱150</p><p>Floral scent</p><button class="action-btn">Add to Cart</button></div>
+        <div class="service-card"><img src="images/Anti Tick.png"><h3>Anti-Flea Spray</h3><p class="price">₱300</p><p>Tick protection</p><button class="action-btn">Add to Cart</button></div>
+        <div class="service-card"><img src="images/BrushnPaste.png"><h3>Brush & Paste Set</h3><p class="price">₱200</p><p>Dental care</p><button class="action-btn">Add to Cart</button></div>
+        <div class="service-card"><img src="images/Pet Towel.png"><h3>Pet Towel</h3><p class="price">₱180</p><p>Soft microfiber</p><button class="action-btn">Add to Cart</button></div>
+        <div class="service-card"><img src="images/Detangling Spray.png"><h3>Detangling Spray</h3><p class="price">₱220</p><p>Silky coat</p><button class="action-btn">Add to Cart</button></div>
+        <div class="service-card"><img src="images/pet brush.jpg"><h3>Pet Brush</h3><p class="price">₱150</p><p>Comfort grip</p><button class="action-btn">Add to Cart</button></div>
+        <div class="service-card"><img src="images/collars.webp"><h3>Collars & Leash</h3><p class="price">₱200</p><p>Adjustable</p><button class="action-btn">Add to Cart</button></div>
+      </div>
+    </section>
+
+    <div id="successMsg" class="success-msg">Item added successfully!</div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>📍 Lazatin Blvd, San Fernando, Philippines, 2001</p>
+      <p>📞 0995 456 3933 | 📧 harleyspetsalon@gmail.com</p>
+      <p>Follow us: @harleys_pet_salon (Facebook & Instagram)</p>
+      <p>&copy; 2025 Harley's Pet Salon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scrollToTopBtn" title="Go to top">&#x2191;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

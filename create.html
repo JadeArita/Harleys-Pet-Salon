@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harley's Pet Salon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <p class="top">Open 8:30am-5:30pm | Monday-Sunday</p>
+    </div>
+  <nav class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Harley's Pet Salon Logo" /></a>
+        <span>Harley's Pet Salon</span>
+    </div>
+    <div class="nav-icons">
+      <a href="create.html"><i class="fas fa-user"></i></a>
+    </div>
+  </nav>
+
+  
+  <div class="form-wrapper"> 
+    <div class="form-container">
+      <form id="accountForm" novalidate>
+        <h2>Create Account</h2>
+        
+        <label>First Name:</label>
+        <input type="text" name="First Name" required />
+
+        <label>Last Name:</label>
+        <input type="text" name="Last Name" required />
+
+        <label>Gender:</label>
+        <label><input type="radio" name="Gender" value="Male" required /> Male</label>
+        <label><input type="radio" name="Gender" value="Female" /> Female</label>
+
+        <label>Address:</label>
+        <textarea name="Address" rows="3" required></textarea>
+
+        <label>Contact Number:</label>
+        <input type="tel" id="contactNumber" name="Contact Number" pattern="[0-9]{11}" title="Contact number must be exactly 11 digits" required />
+        <span class="error-message" id="contact-error"></span>
+
+        <label>Email Address:</label>
+        <input type="email" id="emailAddress" name="Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., example@gmail.com)" required />
+        <span class="error-message" id="email-error"></span>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="Date of Birth" required />
+
+        <label>Username:</label>
+        <input type="text" name="Username" required />
+
+        <label>Password:</label>
+        <input type="password" id="password" name="Password" minlength="8" title="Password must be at least 8 characters long and contain at least one letter, one number, and one special character" required />
+        <span class="error-message" id="password-error"></span>
+
+        <div class="buttons">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+
+      <div id="output">
+        <h3>Submitted Info:</h3>
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer class="footer">
+  <div class="footer-content">
+    <p>📍 Lazatin Blvd, San Fernando, Philippines, 2001</p>
+    <p>📞 0995 456 3933 | 📧 harleyspetsalon@gmail.com</p>
+    <p>Follow us: @harleys_pet_salon (Facebook & Instagram)</p>
+    <p>&copy; 2025 Harley's Pet Salon. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const burger = document.getElementById('burger');
+    nav.classList.toggle('nav-active');
+    burger.classList.toggle('toggle');
+  }
+
+  
+  function validateField(inputElement, errorElement) {
+    if (inputElement.validity.valid) {
+      errorElement.textContent = ''; 
+      inputElement.classList.remove('invalid');
+    } else {
+      errorElement.textContent = inputElement.title; 
+      inputElement.classList.add('invalid');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('accountForm');
+    const contactInput = document.getElementById('contactNumber');
+    const emailInput = document.getElementById('emailAddress');
+    const passwordInput = document.getElementById('password');
+
+    const contactError = document.getElementById('contact-error');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+
+    
+    form.addEventListener('submit', function(event) {
+      
+      event.preventDefault(); 
+
+     
+      validateField(contactInput, contactError);
+      validateField(emailInput, emailError);
+      validateField(passwordInput, passwordError);
+
+     
+      if (!form.checkValidity()) {
+        
+        return; 
+      }
+
+      const output = document.getElementById('output');
+      const resultDiv = document.getElementById('result');
+      const formContainer = document.querySelector('.form-container');
+      const formWrapper = document.querySelector('.form-wrapper');
+
+      const data = new FormData(form);
+      let resultHtml = '<div class="submitted-entry">';
+
+      for (let [key, value] of data.entries()) {
+        resultHtml += `<p><strong>${key}:</strong> ${value}</p>`;
+      }
+
+      resultHtml += '</div><hr>'; 
+
+      resultDiv.innerHTML += resultHtml; 
+
+      
+      formContainer.style.justifyContent = 'flex-start';
+      formContainer.style.flexDirection = 'row';
+      formWrapper.style.justifyContent = 'flex-start';
+
+      output.style.display = 'block'; 
+
+      form.reset(); 
+      
+      contactError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      contactInput.classList.remove('invalid');
+      emailInput.classList.remove('invalid');
+      passwordInput.classList.remove('invalid');
+    });
+
+  
+    contactInput.addEventListener('input', () => {
+      if (contactInput.validity.valid) {
+        contactError.textContent = '';
+        contactInput.classList.remove('invalid');
+      }
+    });
+    emailInput.addEventListener('input', () => {
+      if (emailInput.validity.valid) {
+        emailError.textContent = '';
+        emailInput.classList.remove('invalid');
+      }
+    });
+    passwordInput.addEventListener('input', () => {
+      if (passwordInput.validity.valid) {
+        passwordError.textContent = '';
+        passwordInput.classList.remove('invalid');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

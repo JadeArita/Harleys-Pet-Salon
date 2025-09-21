@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harley's Pet Salon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <p class="top">Open 8:30am-5:30pm | Monday-Sunday</p>
+    </div>
+  <nav class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Harley's Pet Salon Logo" /></a>
+        <span>Harley's Pet Salon</span>
+    </div>
+    <div class="nav-icons">
+      <a href="create.html"><i class="fas fa-user"></i></a>
+      <div class="burger" id="burger" onclick="toggleMenu()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="feature.html">Feature</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contacts.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+
+
+<section id="contact" class="contact-section">
+  <h2>Visit Us</h2>
+  <div class="contact-content">
+    <div class="visit-us-info">
+      <h3>Location & Hours</h3>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Address: Lazatin Blvd, San Fernando, Philippines, 2001</li>
+        <li><i class="far fa-clock"></i> Opening Hours: Monday-Sunday <br>  from 8:30am-5:30pm</li>
+      </ul>
+
+      <h3>Contact Details</h3>
+      <ul>
+        <li><i class="fas fa-phone-alt"></i> Mobile Number / Reservations: 0995 456 3933</li>
+        <li><i class="fas fa-envelope"></i> Email: harleyspetsalon@gmail.com</li>
+      </ul>
+
+      <h3>Social Media</h3>
+      <ul>
+        <li><i class="fab fa-facebook"></i> Facebook: Harley's Pet Salon</li>
+        <li><i class="fab fa-instagram"></i> Instagram: harleys_pet_salon</li>
+      </ul>
+    </div>
+
+    <div class="contact-right-column">
+      <div class="contact-form-container">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" action="#" method="POST" class="contact-form">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+        <div id="confirmationMessage" class="confirmation-message"></div>
+      </div>
+
+      <div class="contact-map-container">
+        <h3>Find Us</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.218193139941!2d120.67171957493281!3d15.036042985503562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f716d293bc55%3A0xa2f9b3fb01539ea2!2sHarley&#39;s%20Pet%20Salon!5e0!3m2!1sen!2sph!4v1758126447769!5m2!1sen!2sph" width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>📍 Lazatin Blvd, San Fernando, Philippines, 2001</p>
+    <p>📞 0995 456 3933 | 📧 harleyspetsalon@gmail.com</p>
+    <p>Follow us: @harleys_pet_salon (Facebook & Instagram)</p>
+    <p>&copy; 2025 Harley's Pet Salon. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="scrollToTopBtn" title="Go to top">&#x2191;</button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

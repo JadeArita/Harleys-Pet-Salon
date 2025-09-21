@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fill Up Details</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.fill-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px 50px 30px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: flex-direction 0.5s ease-in-out, justify-content 0.5s ease-in-out;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+.fill-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #18230F;
+}
+.fill-container label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #333;
+}
+.fill-container input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #67699d;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 25px;
+}
+.cart-btn,
+.submit-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+.cart-btn {
+  background: #67699d;
+  color: #fff;
+}
+.cart-btn:hover { background: #555688; }
+.submit-btn {
+  background: #67699d;
+  color: #fff;
+}
+.submit-btn:hover { background: #555688; }
+</style>
+</head>
+<body>
+
+<div class="fill-container">
+  <h1>Fill Up Your Details</h1>
+  <form id="fillForm">
+    <label>Owner's Name:
+      <input type="text" name="owner" required>
+    </label>
+    <label>Pet's Name:
+      <input type="text" name="pet" required>
+    </label>
+    <label>Address:
+      <input type="text" name="address" required>
+    </label>
+    <label>Phone Number:
+      <input type="tel" name="phone" required>
+    </label>
+    <label>Email:
+      <input type="email" name="email" required>
+    </label>
+    <label>Date of Arrival:
+      <input type="date" name="date" required>
+    </label>
+    <label>Time of Arrival:
+      <input type="time" name="time" required>
+    </label>
+
+    <div class="btn-row">
+      <button type="button" class="cart-btn" id="backCart">Back to Cart</button>
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script>
+document.getElementById('backCart').addEventListener('click', ()=>{
+  window.location.href = 'cart.html';
+});
+
+document.getElementById('fillForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Thank you! Your order has been submitted.');
+  localStorage.removeItem('harleyCart'); // clear cart
+  window.location.href = 'index.html';   // back to home
+});
+</script>
+</body>
+</html>

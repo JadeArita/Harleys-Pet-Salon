@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Cart</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cart-container {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+.cart-item button {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.cart-btn {
+  padding: 12px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.shop-btn {
+  background: #67699d;
+  color: #fff;
+}
+.shop-btn:hover { background: #555688; }
+.confirm-btn {
+  background: #67699d;
+  color: #fff;
+}
+.confirm-btn:hover { background: #555688; }
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center;margin-top:30px;">Your Orders & Services</h1>
+<div class="cart-container">
+  <div id="cartItems"></div>
+
+  <div class="cart-actions">
+    <button class="cart-btn shop-btn" id="shopMore">Shop More</button>
+    <button class="cart-btn confirm-btn" id="confirmOrder">Confirm Order</button>
+  </div>
+</div>
+
+<script>
+const container = document.getElementById('cartItems');
+let cart = JSON.parse(localStorage.getItem('harleyCart')) || [];
+
+function renderCart(){
+  if(cart.length === 0){
+    container.innerHTML = "<p>No items in cart.</p>";
+    return;
+  }
+  container.innerHTML = cart.map((item,i)=>`
+    <div class="cart-item">
+      <span><strong>${item.name}</strong> - ${item.price}</span>
+      <button onclick="removeItem(${i})">Remove</button>
+    </div>
+  `).join('');
+}
+
+function removeItem(i){
+  cart.splice(i,1);
+  localStorage.setItem('harleyCart', JSON.stringify(cart));
+  renderCart();
+}
+
+document.getElementById('shopMore').addEventListener('click', ()=>{
+  window.location.href = 'services.html';
+});
+
+document.getElementById('confirmOrder').addEventListener('click', ()=>{
+  if(cart.length===0){ alert("Your cart is empty."); return; }
+  localStorage.setItem('harleyCart', JSON.stringify(cart));
+  window.location.href = 'fill.html';
+});
+
+renderCart();
+</script>
+</body>
+</html>
